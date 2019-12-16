@@ -29,7 +29,7 @@ class App extends React.Component {
         this.unsubscribeFromAuth = firebase.auth().onAuthStateChanged( async userAuth => {
             
             if(userAuth){
-                
+
                 const userRef = await createUserProfileDocument(userAuth);
                 
                 userRef.onSnapshot(snapShot => {
@@ -40,6 +40,7 @@ class App extends React.Component {
                             }
                     })
                 })
+
                 
             }
 
