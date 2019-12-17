@@ -1,5 +1,7 @@
 import React from 'react';
 
+import CustomButton from './../custom-button/custom-button.component';
+
 import './collection-preview.style.scss';
 import CollectionItem from './../../components/collection-item/collection-item.component';
 
@@ -9,8 +11,8 @@ const CollectionPreview = ({title, items}) => (
         <div className="preview">
             {items
             .filter((item, idx) => idx < 4)
-            .map(({id, ...otherItemProp}) => (
-                <CollectionItem  key={id} {...otherItemProp} />
+            .map((item) => (
+                <CollectionItem  key={item.id} item={item} />
             ))}
         </div>
     </div>
